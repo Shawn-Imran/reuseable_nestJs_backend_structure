@@ -57,7 +57,7 @@ CREATE TABLE role_permissions (
 );
 
 
-CREATE table customers(
+CREATE table users(
     id UUID NOT NULL DEFAULT (gen_random_uuid ()),
     name varchar(50),
     email varchar(100) UNIQUE,
@@ -71,4 +71,4 @@ CREATE table customers(
     updated_at text default timezone('Asia/Dhaka' :: text, now()) not null,
     PRIMARY KEY (id)
 );
-ALTER TABLE customers ADD COLUMN is_disabled BOOLEAN DEFAULT false;
+ALTER TABLE users ADD COLUMN is_disabled BOOLEAN DEFAULT false;
