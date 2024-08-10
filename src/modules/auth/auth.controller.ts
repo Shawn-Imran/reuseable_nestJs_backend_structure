@@ -1,9 +1,9 @@
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, Res, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dtos/login.dto';
 import { RegisterDto } from './dtos/register.dto';
 import { JwtAuthGuard } from '../../config/auth_config/jwt-auth.guard';
-import { Request } from 'express';
+import { Request, Response } from 'express';
 
 
 @Controller('auth')
@@ -22,12 +22,17 @@ export class AuthController {
 
   @UseGuards(JwtAuthGuard)
   @Get('profile')
-  async getProfile(@Req() req: Request) {
-    return req.user;
+  async getProfile(@Res() res: Response) {
+    try {
+      let currentUser = res.locals.user;
+      return res.locals.done(true, "success", currentUser);
+    } catch (error) {
+      return res.locals.done(false, error.message, null);
+    }
   }
 
 
-  /** need to think about that */
+  /** need to think about that **/
   @UseGuards(JwtAuthGuard)
   @Post('logout')
   async logout(@Req() req: Request) {
