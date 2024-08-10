@@ -5,5 +5,11 @@ declare global {
     interface Request {
       user?: any; // Adjust the type of user according to your needs
     }
+
+    // interface Response {
+    //   locals: {
+    //     user?: any; // Adjust the type of user according to your needs
+    //   };
+    // }
   }
 }

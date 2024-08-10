@@ -30,7 +30,15 @@ export class AuthService {
     };
     await this.userRepository.save(newUser);
 
-    return `User ${name} registered successfully`;
+    // return `User ${name} registered successfully`;
+    return {
+      success: true,
+      message: `User ${name} registered with ${email} successfully`,
+      user: {
+        name,
+        email,
+      }
+    }
   }
 
   async login(loginDto: LoginDto) {
@@ -59,6 +67,7 @@ export class AuthService {
         name: user.name,
         email: user.email,
         mobile: user.mobile,
+        avatar: user.avatar,
       },
     };
   }

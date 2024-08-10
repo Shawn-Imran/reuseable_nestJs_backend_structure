@@ -8,12 +8,12 @@ export class UserDto {
   email: string;
   mobile: string;
   avatar: string;
-  isVerified: boolean;
-  isDeleted: boolean;
-  isDisabled: boolean;
-  status: Status;
-  createdAt: Date;
-  updatedAt: Date;
+  isVerified?: boolean;
+  isDeleted?: boolean;
+  isDisabled?: boolean;
+  status?: Status;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 
