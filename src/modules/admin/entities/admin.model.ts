@@ -2,8 +2,8 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateCol
 import { Status } from '../../../common/enums/status.enum';
 
 
-@Entity('users')
-export class User {
+@Entity('admins')
+export class Admin {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

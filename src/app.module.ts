@@ -7,6 +7,7 @@ import { UserModule } from './modules/user/user.module';
 import { User } from './modules/user/entities/User.model';
 import { ConfigModule } from '@nestjs/config';
 import { ApiResponseMiddleware } from './config/middleware/apiResponse.middleware';
+import { AdminModule } from './modules/admin/admin.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { ApiResponseMiddleware } from './config/middleware/apiResponse.middlewar
     }),
     AuthModule,
     UserModule,
+    AdminModule,
   ],
   controllers: [AppController],
   providers: [AppService],
