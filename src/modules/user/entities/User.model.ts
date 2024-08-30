@@ -1,9 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Status } from '../../../common/enums/status.enum';
 
-export enum Status {
-  active = 'active',
-  inactive = 'inactive',
-}
 
 @Entity('users')
 export class User {

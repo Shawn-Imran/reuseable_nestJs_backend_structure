@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { IsString, IsEmail, IsMobilePhone, IsOptional, IsEnum, IsBoolean, Length } from 'class-validator';
-import { Status } from '../entities/User.model';
+import { Status } from '../../../common/enums/status.enum';
 
 export class UserDto {
   id: string;
