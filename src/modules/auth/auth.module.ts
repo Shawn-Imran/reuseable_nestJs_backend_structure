@@ -23,7 +23,6 @@ import { UserModule } from '../user/user.module';
     ConfigModule,
     UserModule,
     TypeOrmModule.forFeature([User])
-
   ],
   providers: [AuthService, JwtStrategy],
   controllers: [AuthController],
